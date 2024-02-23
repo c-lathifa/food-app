@@ -12,7 +12,6 @@ const Body = () => {
     fetchData()
   }, [])
 
-  console.log(restaurantList)
   const fetchData = async () => {
     const data = await fetch(
       'https://www.swiggy.com/dapi/restaurants/list/v5?lat=14.68020&lng=77.62500&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING',
@@ -44,8 +43,6 @@ const Body = () => {
         <button
           className="mx-3 py-2 px-8 text-xl rounded-lg bg-yellow-300 hover:shadow-lg"
           onClick={() => {
-            console.log(searchText)
-
             const filteredRestaurant = restaurantList.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase()),
             )

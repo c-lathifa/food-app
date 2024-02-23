@@ -6,6 +6,7 @@ import Contact from './src/components/Contact'
 import Body from './src/components/Body'
 import RestaurantMenu from './src/components/RestaurantMenu'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Cart from './src/components/Cart'
 
 const appRoute = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const appRoute = createBrowserRouter([
       {
         path: '/restaurant/:restaurantId',
         element: <RestaurantMenu />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
       },
     ],
   },

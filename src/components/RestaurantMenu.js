@@ -16,22 +16,23 @@ const RestaurantMenu = () => {
     const json = await data.json()
     serRestaurantMenu(json)
   }
+
   if (restaurantMenu === null) return <Shimmer />
 
   const { name, cuisines, costForTwoMessage } =
-    restaurantMenu?.data?.cards[0]?.card?.card?.info
+    restaurantMenu?.data?.cards[2]?.card?.card?.info
 
-  const { itemCards } =
-    restaurantMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
-      .card.card
+  // const { itemCards } =
+  //   restaurantMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
+  //     .card.card
 
   const category =
-    restaurantMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    restaurantMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (category) =>
         category?.card?.card?.['@type'] ===
         'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory',
     )
-  console.log(category)
+
   return (
     <div className="w-3/6 m-auto bg-gray-50">
       <h1 className="font-bold my-2 text-center">{name}</h1>

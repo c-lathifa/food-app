@@ -6,7 +6,7 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items)
 
   return (
-    <div className="flex justify-between m-3 shadow-md sticky">
+    <div className="flex justify-between m-3 shadow-md ">
       <div>
         <img
           className="w-20 cursor-pointer mx-3"
